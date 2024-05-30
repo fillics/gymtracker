@@ -18,11 +18,13 @@ const db = getFirestore(app);
 const auth = getAuth(app);
 
 let analytics;
-if (typeof window !== 'undefined') {
+if (typeof window !== 'undefined' && window.document.cookie !== undefined) {
   isSupported().then((supported) => {
     if (supported) {
       analytics = getAnalytics(app);
     }
+  }).catch(error => {
+    console.error('Analytics initialization failed:', error);
   });
 }
 
