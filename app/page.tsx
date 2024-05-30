@@ -1,6 +1,8 @@
-import AddExercise from './components/AddExercise';
-import ExerciseList from './components/ExerciseList';
-import AppProvider from './components/AppProvider';
+import dynamic from 'next/dynamic';
+
+const AddExercise = dynamic(() => import('./components/AddExercise'), { ssr: false });
+const ExerciseList = dynamic(() => import('./components/ExerciseList'), { ssr: false });
+const AppProvider = dynamic(() => import('./components/AppProvider'), { ssr: false });
 
 export default function Home() {
   return (

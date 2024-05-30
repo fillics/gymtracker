@@ -1,4 +1,4 @@
-"use client"; // Aggiungi questa direttiva in cima al file
+"use client";
 
 import { useState, useEffect } from 'react';
 import { db } from '../../firebase';
