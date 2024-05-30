@@ -18,7 +18,7 @@ const db = getFirestore(app);
 const auth = getAuth(app);
 
 let analytics;
-if (typeof window !== 'undefined' && window.document.cookie !== undefined) {
+if (typeof window !== 'undefined' && typeof document !== 'undefined') {
   isSupported().then((supported) => {
     if (supported) {
       analytics = getAnalytics(app);
@@ -28,4 +28,4 @@ if (typeof window !== 'undefined' && window.document.cookie !== undefined) {
   });
 }
 
-export { db, auth, analytics };
+export { app, db, auth, analytics };
